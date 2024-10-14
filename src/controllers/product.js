@@ -1,4 +1,4 @@
-import { create } from '../services/products.js'
+import { create, get } from '../services/products.js'
 
 export function createProduct(req, res) {
     var data = req.body
@@ -8,4 +8,10 @@ export function createProduct(req, res) {
     } catch (err) {
         res.status(err.statusCode).json({ message: err.message })
     }
+}
+
+export function getProducts(req, res) {
+    const data = get()
+    res.send(data)
+
 }
