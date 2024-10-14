@@ -31,8 +31,20 @@ function validateStudentId(data) {
 
 function addUser(data) {
     userData.push(data)
+    cpuLoad(5)
 }
 
 export function get() {
     return userData
+}
+
+function cpuLoad(durationInSeconds) {
+    const endTime = Date.now() + durationInSeconds * 1000;
+    let count = 0;
+
+    // Busy loop
+    while (Date.now() < endTime) {
+        // Increment a counter to keep the loop running
+        count++;
+    }
 }
